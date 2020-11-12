@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>{{ if .IsHome }}{{ .Title }} | {{.Site.Params.description}} {{ else }}{{ .Params.SEOTitle }}{{ end }}</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ "css/style.css" | absURL}}" />
+    
+
+    {{ "<!-- FAVICON -->" | safeHTML }}
+    <link rel="icon" href="{{.Site.Params.icon}}" />
+    <link rel="apple-touch-icon" href="{{.Site.Params.icon}}" />
+    <meta name="msapplication-TileImage" content="{{.Site.Params.icon}}" />
+
+    {{ "<!-- SEO OPTIMIZATION TAGS -->" | safeHTML }}
+    {{ if eq .Page.Kind "section" "taxonomy" "term" }}<meta name="robots" content="noindex, follow" />{{ end }}{{ if eq .RelPermalink "/" }}{{ if ne .Paginator.PageNumber 1 }} <meta name="robots" content="noindex, follow">{{ end }}{{ end }}{{if .IsPage}}<meta name="robots" content="index, follow" />{{end}}{{if .IsHome}}<meta name="robots" content="index, follow" />{{end}}
+    <meta name="description" content="{{ if .IsHome }}{{.Site.Params.excrept}}{{ else }}{{.Params.excrept}}{{ end }}"/>
+    <link rel="canonical" href="{{ .Permalink }}"/>
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Title }} | {{.Site.Params.description}} {{ else }}{{ .Params.SEOTitle }}{{ end }}">
+    <meta property="og:description" content="{{ if .IsHome }}{{.Site.Params.excrept}}{{ else }}{{.Params.excrept}}{{ end }}">
+    <meta property="og:url" content="{{.Page.Permalink}}">
+    <meta property="og:site_name" content="{{.Site.Title}}">
+    <meta property="og:image" content="{{ if .IsHome }}{{.Site.Params.image}}{{else}}{{.Params.image}}{{end}}">
+    {{if .IsPage}}{{if .Params.tags}}<meta property="article:tag" content="{{index .Params.tags 0}}">{{end}}
+    {{ if .Params.categories }}<meta property="article:section" content="{{index .Params.categories 0}}">{{ end }}
+    <meta property="article:published_time" content="{{.Date}}">
+    <meta property="article:modified_time" content="{{.Params.updateDate}}">
+    <meta property="og:updated_time" content="{{.Params.updateDate}}">
+    {{end}}
+
+    {{ "<!-- OPEN GRAPH META -->" | safeHTML }}
+    <meta property="article:publisher" content="{{.Site.Params.FacebookPublisher}}">
+    <meta property="article:author" content="{{.Site.Params.FacebookAuthor}}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{.Site.Params.TwitterPublisher}}">
+    <meta name="twitter:creator" content="{{.Site.Params.TwitterAuthor}}">
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Title }} | {{.Site.Params.description}} {{ else }}{{ .Params.SEOTitle }}{{ end }}">
+    <meta name="twitter:description" content="{{ if .IsHome }}{{.Site.Params.excrept}}{{ else }}{{.Params.excrept}}{{ end }}">
+    <meta name="twitter:image" content="{{ if .IsHome }}{{.Site.Params.image}}{{else}}{{.Params.image}}{{end}}">
+
+    {{if .IsHome}}
+    {{ "<!-- SITE VERIFICATION -->" | safeHTML }}
+    <meta name="google-site-verification" content="{{.Site.Params.googleSiteVerify}}" />
+    <meta name="msvalidate.01" content="{{.Site.Params.BingWebmaster}}" />
+    <meta name="p:domain_verify" content="{{.Site.Params.PinterestVerify}}" />
+    {{end}}
+</head>
+<body>

@@ -1,0 +1,25 @@
+<header id="navMain" class="main-nav header" role="banner">
+    <div class="wrap">
+        <a href="{{.Site.BaseURL}}" class="logo-link">
+            <img src="{{.Site.Params.logo}}" alt="{{.Site.Title}}" class="logo-img lazyload" loading="lazy"
+                style="margin-top: 10px;" />
+        </a>
+        <ul class="nav-ul">
+            {{ range .Site.Menus.mainmenu }}
+            <li><a href="{{.URL}}" class="nav-link">{{.Name}}</a></li>
+            {{ end }}
+        </ul>
+        <div class="menu-menu-wrapper">
+            <div class="mobile-menu-button">
+                <button class="mobile-menu">|||</button>
+            </div>
+            <div id="mobilemenu">
+                <ul>
+                    {{ range .Site.Menus.mainmenu }}
+                    <li><a href="{{.URL}}">{{.Name}}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

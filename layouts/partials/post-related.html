@@ -1,0 +1,16 @@
+{{ $related := .Site.RegularPages.Related . | first 4 }}
+{{ with $related }}
+<div class="related-posts">
+    <h3>See Also</h3>
+    <ul>
+        {{ range . }}
+        <li>
+            <a href="{{.RelPermalink}}">
+                <img src="{{.Params.image | absURL}}" class="lazyload" loading="lazy" alt="{{.Title}}" width="283"
+                    height="159">
+                <h5 class="post-title">{{.Title}}</h5>
+            </a>
+        </li> {{ end }}
+    </ul>
+    </div>
+{{end}}

@@ -1,0 +1,20 @@
+<div class="sidebar-container">
+    <div id="sidebar" class="sidebar-right">
+        {{ $related := .Site.RegularPages.Related . | first 5 }}
+        {{ with $related }}
+        <div class="related-posts">
+            <h3>Related Posts</h3>
+            <ul>
+                {{ range . }}
+                <li>
+                    <a href="{{.RelPermalink}}">
+                        <img src="{{.Params.image | absURL}}" class="lazyload" loading="lazy" alt="{{.Title}}" width="283"
+                            height="159">
+                        <h5 class="post-title">{{.Title}}</h5>
+                    </a>
+                </li> {{ end }}
+            </ul>
+            {{ end }}
+        </div>
+    </div>
+</div>

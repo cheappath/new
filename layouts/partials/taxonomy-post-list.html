@@ -1,0 +1,33 @@
+<div class="wrap">
+    <div id="content" class="blog-page-list">
+        <h2 class="post-related-title">Showing Posts From  </h2>
+        <div class="blog-list">
+
+            {{ range .RegularPages }}
+            <div class="articles-list-item">
+                <div class="articles-list-item">
+                    <div class="blog-single-post">
+                        <a href="{{.Permalink}}" class="post-img">
+                            <img src="{{.Params.image | absURL}}" alt="{{.Title}}" class="blog-single-post-img lazyload"
+                                loading="lazy" width="283" height="159" />
+                        </a>
+                        <div class="post-container">
+                            <div class="post-container-content">
+                                <div class="post-categories-container">
+                                    <div class="post-categories"><a
+                                            href="{{.Site.BaseURL}}categories/{{ with .Params.categories }}{{index . 0 | urlize}}{{end}}">{{ with .Params.categories }}{{index . 0}}{{end}}</a>
+                                    </div>
+                                </div>
+                                <a href="{{.Permalink}}" class="post-title">
+                                    <h2 class="blog-single-post-title">{{.Title}}</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{end}}
+        </div>
+        {{ partial "pagination" . }}
+    </div>
+</div>

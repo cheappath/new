@@ -1,0 +1,37 @@
+<div id="content" class="single-post">
+    <div class="post-thumbnail">
+        <img src="{{.Params.image | absURL}}" class="lazyload" loading="lazy" alt="{{.Title}}">
+    </div>
+    <div class="post-single-meta">
+        <div class="post-categories-container">
+            <div class="post-categories"><a
+                href="{{.Site.BaseURL}}categories/{{ with .Params.categories }}{{index . 0 | urlize}}{{end}}">{{ with .Params.categories }}{{index . 0}}{{end}}</a>
+        </div>
+        </div>
+        <div class="post-title">
+            <h1 class="post-title-h1">{{.Title}}</h1>
+        </div>
+        <div class="post-meta-content post-meta">
+            <div class="post-auhor-date post-auhor-date-full">
+                <div class="post-auhor-container">
+                    <img alt="Erik B." src="{{.Site.Params.AuthorImage}}"
+                        class="avatar post-author-image lazyloaded"
+                        height="130" width="130" loading="lazy">
+                    <span class="post-author">{{.Site.Params.siteAuthor}},</span>
+                    <span class="post-publish-date"><time title="{{.Date}}">
+                            {{ .Date.Format "January 2, 2006"}}</time></span>
+                    <span class="post-lastmod-date"><b>Last Updated: </b><time
+                            title="{{.Params.updateDate}}">
+                            {{ .Date.Format "January 2, 2006"}}</time></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="single-post-content">
+        <div class="r-s-p-b">
+            {{.Content}}
+        </div>
+    </div>
+    {{ partial "post-author-meta" . }}
+    {{ partial "post-related" . }}
+</div>

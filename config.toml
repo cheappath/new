@@ -1,0 +1,62 @@
+baseURL = "https://netlify-first-theme-demo.netlify.app/" #This will be the URL of your Website
+languageCode = "en-us" #Your Website Language (Used for SEO)
+title = "The Website Name" #Your Website Name
+paginate = 6 #Number of Post on Homepage
+googleAnalytics = "UA-1920" #Google Analytics Tracking ID
+
+[params]
+    logo = "/images/logo.png" #Logo of your Website (Put Image in dir /static/images)
+    description = "TOP RATED PRODUCT REVIEWS" #SEO Discription of your Website
+    excrept = "This is my Website Custom SEO Description" #SEO Exprect of Your Website
+    image = "/images/site_banner.png" #Business Cover (1920x1080) Used in SEO
+    icon = "/images/favicon.png" #Favicon
+
+    siteAuthor = "Erik Bolinder" #Your Name
+    AuthorImage = "/images/author.png" #Your Profile Picure
+    AuthorBio = "There is your Authoer Bio" #Your Author BIO
+
+    googleSiteVerify = "code1" #Google Search Console Verification
+    BingWebmaster = "code2" #Bing Verification
+    PinterestVerify = "code3" #Pinterest Verification
+
+      ##OpenGraph Meta Start
+    FacebookPublisher = "https://facebook.com/" #Open Graph Publisher Tag (Facebook)
+    FacebookAuthor = "https://facebook.com/" #Open Graph Author Tag (Facebook)
+    TwitterPublisher = "@twitter" #Open Graph Publisher Tag (Twitter) Just Put Username
+    TwitterAuthor = "@twitter"  #Open Graph Author Tag (Twitter) Just Put Username
+      ##OpenGraph Meta END
+
+      ##Social Media Profiles Start
+      SocialFB = "https://facebook.com"
+      SocialTwitter = "https://twitter.com"
+      SocialYouTube = "https://youtube.com"
+      SocialTumblr = "https://tumblr.com"
+      SocialLinkedin = "https://linkedin.com"
+      SocialPinterest = "https://pinterest.com"
+      ##Social Media Profiles END
+
+[taxonomies]
+  category = "categories" #Taxonomy Category
+  tag = "tags" #Taxonomy Tags
+  #You can Add More Taxnomies by Singular = "Prular"
+
+  #Header Menu Start (Order By Weight)
+[[menu.mainmenu]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+  #Header Menu END
+  #Footer Menu Start (Order By Weight)
+
+[[menu.footermenu]]
+  name = "Home"
+  url = "/"
+  weight = "1"
+  
+[[menu.footermenu]]
+  name = "About Us"
+  url = "/about/"
+  weight = "2"
+
+  #Footer Menu END

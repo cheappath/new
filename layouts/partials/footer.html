@@ -1,0 +1,53 @@
+<footer class="footer">
+    <div class="wrap">
+        <div class="r-s-table">
+            <div class="r-s-table-cell">
+                <div class="r-s-copyrights-logo">
+                    <a href="{{.Site.BaseURL}}" class="logo-link">
+                        <img src="{{.Site.Params.logo}}" alt="{{.Site.Title}}" class="logo-img lazyload"
+                            loading="lazy" />
+                    </a>
+                    <ul></ul>
+                </div>
+                <div class="r-s-copyrights-info">
+                    <span>{{.Site.Title}} © 2020. All rights reserved.</span>
+                </div>
+            </div>
+            <div class="r-s-table-cell">
+                <div>
+                    <ul class="footer-nav-ul">
+                        {{ range .Site.Menus.footermenu }}
+                        <li><a href="{{.URL}}" class="nav-link">{{.Name}}</a></li>
+                        {{ end }}
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <div class="footer-social-buttons">
+                        {{ if .Site.Params.SocialFB }}
+                        <a href="{{.Site.Params.SocialFB  | safeHTML}}" target="_blank" rel="nofollow noopener noreferrer" class="f-a f-a-facebook">Facebook</a>
+                        {{ end }}
+                        {{ if .Site.Params.SocialTwitter }}
+                        <a href="{{.Site.Params.SocialTwitter  | safeHTML}}" target="_blank" rel="nofollow noopener noreferrer" class="f-a f-a-twitter">Twitter</a>
+                        {{ end }}
+                        {{ if .Site.Params.SocialYouTube }}
+                        <a href="{{.Site.Params.SocialYouTube  | safeHTML}}" target="_blank" rel="nofollow noopener noreferrer" class="f-a f-a-twitter">YouTube</a>
+                        {{ end }}
+                        {{ if .Site.Params.SocialTumblr }}
+                        <a href="{{.Site.Params.SocialTumblr | safeHTML}}" target="_blank" rel="nofollow noopener noreferrer" class="f-a f-a-twitter">Tumblr</a>
+                        {{ end }}
+                        {{ if .Site.Params.SocialLinkedin }}
+                        <a href="{{.Site.Params.SocialLinkedin | safeHTML}}" target="_blank" rel="nofollow noopener noreferrer" class="f-a f-a-twitter">Linkedin</a>
+                        {{ end }}
+                        {{ if .Site.Params.SocialPinterest }}
+                        <a href="{{.Site.Params.SocialPinterest | safeHTML}}" target="_blank" rel="nofollow noopener noreferrer" class="f-a f-a-twitter">Pinterest</a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="{{"js/menu-function.js" | absURL}}" type="text/javascript"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="b51e5ff780120b5b017bf5af-|49" defer=""></script>
+</footer>
+</body>
+</html>
